@@ -17,14 +17,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F12-4T-zlF" userLabel="Scene View">
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F12-4T-zlF" userLabel="Scene View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </arscnView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npf-dk-1Vi" userLabel="Message Panel">
+                                <rect key="frame" x="0.0" y="36" width="375" height="32"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6wA-Hq-IGM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="These are the instructions." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9N-Gi-9CT">
+                                            <rect key="frame" x="16" y="8" width="343" height="16"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="d9N-Gi-9CT" secondAttribute="trailing" constant="16" id="7u1-wo-1Qf"/>
+                                        <constraint firstItem="d9N-Gi-9CT" firstAttribute="leading" secondItem="6wA-Hq-IGM" secondAttribute="leading" constant="16" id="cEC-Al-qWv"/>
+                                        <constraint firstItem="d9N-Gi-9CT" firstAttribute="top" secondItem="6wA-Hq-IGM" secondAttribute="top" constant="8" id="mtE-cx-jhT"/>
+                                        <constraint firstItem="d9N-Gi-9CT" firstAttribute="centerY" secondItem="6wA-Hq-IGM" secondAttribute="centerY" id="naM-S5-IWy"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="d9N-Gi-9CT" secondAttribute="bottom" constant="8" id="NM8-SI-ARo"/>
+                                </constraints>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="npf-dk-1Vi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="1N7-lR-8X4"/>
+                            <constraint firstItem="F12-4T-zlF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4kU-jC-hdo"/>
+                            <constraint firstItem="F12-4T-zlF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="CJu-la-2Em"/>
+                            <constraint firstItem="npf-dk-1Vi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PyH-eZ-GqR"/>
+                            <constraint firstItem="F12-4T-zlF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="RjX-xu-egA"/>
+                            <constraint firstItem="F12-4T-zlF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rYn-em-Ib1"/>
+                            <constraint firstItem="npf-dk-1Vi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wgW-Zc-QFA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="instructionLabel" destination="d9N-Gi-9CT" id="Zhv-2i-mnx"/>
+                        <outlet property="sceneView" destination="F12-4T-zlF" id="W9S-91-Jnz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

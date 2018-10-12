@@ -14,6 +14,8 @@
 		248860A22170F57000576BAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 248860A02170F57000576BAE /* LaunchScreen.storyboard */; };
 		248860AD2170F57000576BAE /* Gen_Z_ArTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248860AC2170F57000576BAE /* Gen_Z_ArTests.swift */; };
 		248860B82170F57000576BAE /* Gen_Z_ArUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248860B72170F57000576BAE /* Gen_Z_ArUITests.swift */; };
+		248860CE217114FB00576BAE /* sample_animation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 248860CA21710FA400576BAE /* sample_animation.mp4 */; };
+		248860D02171159300576BAE /* dinosaur.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 248860CF2171158800576BAE /* dinosaur.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		248860B32170F57000576BAE /* Gen Z ArUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gen Z ArUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		248860B72170F57000576BAE /* Gen_Z_ArUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gen_Z_ArUITests.swift; sourceTree = "<group>"; };
 		248860B92170F57000576BAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		248860CA21710FA400576BAE /* sample_animation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample_animation.mp4; sourceTree = "<group>"; };
+		248860CF2171158800576BAE /* dinosaur.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dinosaur.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				248860992170F56F00576BAE /* ViewController.swift */,
 				2488609B2170F56F00576BAE /* Main.storyboard */,
 				2488609E2170F57000576BAE /* Assets.xcassets */,
+				248860CA21710FA400576BAE /* sample_animation.mp4 */,
+				248860CF2171158800576BAE /* dinosaur.mp4 */,
 				248860A02170F57000576BAE /* LaunchScreen.storyboard */,
 				248860A32170F57000576BAE /* Info.plist */,
 			);
@@ -229,7 +235,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				248860CE217114FB00576BAE /* sample_animation.mp4 in Resources */,
 				248860A22170F57000576BAE /* LaunchScreen.storyboard in Resources */,
+				248860D02171159300576BAE /* dinosaur.mp4 in Resources */,
 				2488609F2170F57000576BAE /* Assets.xcassets in Resources */,
 				2488609D2170F56F00576BAE /* Main.storyboard in Resources */,
 			);
@@ -442,7 +450,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "matthewortega.Gen-Z-Ar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -460,7 +468,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "matthewortega.Gen-Z-Ar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
