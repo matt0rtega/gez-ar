@@ -121,7 +121,7 @@ extension ViewController: ARSCNViewDelegate {
         case "image1":
             createVideoNode(size: size, resource: "sample_animation", node: node)
         case "image2":
-            createVideoNode(size: size, resource: "dinosaur", node: node)
+            createVideoNode(size: size, resource: "sample_animation_2", node: node)
         default:
             break
         }
