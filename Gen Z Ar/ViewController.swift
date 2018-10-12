@@ -19,7 +19,10 @@ class ViewController: UIViewController {
     
     // if we want to anchor the 3d models
     private var worldConfiguration: ARWorldTrackingConfiguration?
-    private var imageConfiguration: ARImageTrackingConfiguration?
+    
+    /// A serial queue for thread safety when modifying the SceneKit node graph.
+    let updateQueue = DispatchQueue(label: Bundle.main.bundleIdentifier! +
+        ".serialSceneKitQueue")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +58,8 @@ class ViewController: UIViewController {
         }
         
         worldConfiguration?.detectionImages = referenceImages
+        
     }
-
-
 }
 
 extension ViewController: ARSessionDelegate {
@@ -94,6 +96,7 @@ extension ViewController: ARSessionDelegate {
             instructionLabel.text = "Camera tracking is not available."
         }
     }
+    
 }
 
 extension ViewController: ARSCNViewDelegate {
@@ -101,7 +104,9 @@ extension ViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         // TODO: complete this function in the tutorial
         DispatchQueue.main.async { self.instructionLabel.isHidden = true }
+        
         if let imageAnchor = anchor as? ARImageAnchor {
+            
             handleFoundImage(imageAnchor, node)
         }
     }
@@ -113,23 +118,24 @@ extension ViewController: ARSCNViewDelegate {
         let size = imageAnchor.referenceImage.physicalSize
         
         switch name {
-        case "triceratops":
+        case "image1":
             createVideoNode(size: size, resource: "sample_animation", node: node)
-        case "trex":
+        case "image2":
             createVideoNode(size: size, resource: "dinosaur", node: node)
         default:
             break
         }
         
-        
     }
     
     private func createVideoNode(size: CGSize, resource: String, node: SCNNode){
+        
         if let videoNode = makeVideo(size: size, resource: resource) {
             node.addChildNode(videoNode)
             node.opacity = 1
             print("Node added")
         }
+        
     }
     
     private func makeVideo(size: CGSize, resource: String) -> SCNNode? {
@@ -139,6 +145,7 @@ extension ViewController: ARSCNViewDelegate {
                                                 print("Error")
                                                 return nil
         }
+        
         
         // 2
         let avPlayerItem = AVPlayerItem(url: videoURL)
@@ -165,6 +172,7 @@ extension ViewController: ARSCNViewDelegate {
         // 6
         let videoNode = SCNNode(geometry: videoPlane)
         videoNode.eulerAngles.x = -.pi / 2
+        videoNode.name = resource
         return videoNode
     }
     

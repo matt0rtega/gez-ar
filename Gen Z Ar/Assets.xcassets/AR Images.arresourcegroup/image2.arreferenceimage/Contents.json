@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "stegosaurus.png"
+      "filename" : "image2.png"
     }
   ],
   "info" : {
@@ -10,7 +10,6 @@
     "author" : "xcode"
   },
   "properties" : {
-    "width" : 4.1500000000000004,
-    "unit" : "inches"
+    "width" : 4
   }
 }

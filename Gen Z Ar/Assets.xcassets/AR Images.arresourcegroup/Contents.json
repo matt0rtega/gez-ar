@@ -5,16 +5,10 @@
   },
   "resources" : [
     {
-      "filename" : "numbers.arreferenceimage"
+      "filename" : "image1.arreferenceimage"
     },
     {
-      "filename" : "stegosaurus.arreferenceimage"
-    },
-    {
-      "filename" : "trex.arreferenceimage"
-    },
-    {
-      "filename" : "triceratops.arreferenceimage"
+      "filename" : "image2.arreferenceimage"
     }
   ]
 }
